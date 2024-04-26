@@ -1,0 +1,13 @@
+07 podil srazek v roce = 
+
+
+-- suma srážek v daném roce, měsíci, zemi
+SUM(data[srazky])
+/
+-- suma srážek v daném roce, zemi (napříč všemi měsíci)
+CALCULATE(
+    -- prvni argument: Agregační funkce
+    SUM(data[srazky]),
+-- filtry (rušení, nastavování)
+ALL(dim_datumy[mesic])
+)
