@@ -1,0 +1,12 @@
+dim_datumy = 
+/*
+CALENDARAUTO() projde všechny sloupečky datového typu datum napříč všemi tabulkami.
+Najde minimální datum a maximální datum a mezi těmito hodnotami vytvoří souvislou časovou řadu
+*/
+ADDCOLUMNS(
+SELECTCOLUMNS(
+CALENDARAUTO(),
+"datum",[Date]),
+"rok",YEAR([datum]),
+"mesic",MONTH([datum]),
+"den",DAY([datum]))
